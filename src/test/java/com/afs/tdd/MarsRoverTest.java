@@ -11,11 +11,25 @@ class MarsRoverTest {
         Location location = new Location(0, 0, Direction.N);
         MarsRover marsRover = new MarsRover(location);
         //when
-        marsRover.executeCommand("M");
+        marsRover.executeCommand(Command.M);
         Location currentLocation = new Location(0,1,Direction.N);
         //then
-        assertEquals(currentLocation.getxCoordinate(), marsRover.getLocation().getxCoordinate());
-        assertEquals(currentLocation.getyCoordinate(), marsRover.getLocation().getyCoordinate());
+        assertEquals(currentLocation.getXCoordinate(), marsRover.getLocation().getXCoordinate());
+        assertEquals(currentLocation.getYCoordinate(), marsRover.getLocation().getYCoordinate());
         assertEquals(currentLocation.getDirection(), marsRover.getLocation().getDirection());
     }
+    @Test
+    void should_turn_left_when_executeCommand_given_L() {
+        //given
+        Location location = new Location(0, 0, Direction.N);
+        MarsRover marsRover = new MarsRover(location);
+        //when
+        marsRover.executeCommand(Command.L);
+        Location currentLocation = new Location(0,0,Direction.W);
+        //then
+        assertEquals(currentLocation.getXCoordinate(), marsRover.getLocation().getXCoordinate());
+        assertEquals(currentLocation.getYCoordinate(), marsRover.getLocation().getYCoordinate());
+        assertEquals(currentLocation.getDirection(), marsRover.getLocation().getDirection());
+    }
+
 }
