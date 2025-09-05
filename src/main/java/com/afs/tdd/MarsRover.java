@@ -11,6 +11,13 @@ public class MarsRover {
         return location;
     }
 
+    public String executeBatchOfCommands(Command[] commands) {
+        for(Command command:commands){
+            executeCommand(command);
+        }
+        return location.generateLocationInfo();
+    }
+
     public void executeCommand(Command command) {
         switch(command){
             case M:
