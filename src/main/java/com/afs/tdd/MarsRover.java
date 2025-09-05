@@ -23,8 +23,10 @@ public class MarsRover {
             case L:
                 turnLeft();
                 break;
+            case R:
+                turnRight();
+                break;
         }
-
     }
 
     private void moveForward() {
@@ -56,6 +58,22 @@ public class MarsRover {
                 break;
             case W:
                 location.setDirection(Direction.S);
+                break;
+        }
+    }
+    private void turnRight() {
+        switch(location.getDirection()) {
+            case N:
+                location.setDirection(Direction.E);
+                break;
+            case E:
+                location.setDirection(Direction.S);
+                break;
+            case S:
+                location.setDirection(Direction.W);
+                break;
+            case W:
+                location.setDirection(Direction.N);
                 break;
         }
     }
