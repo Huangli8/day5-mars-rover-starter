@@ -22,6 +22,9 @@ public class MarsRover {
             case R:
                 turnRight();
                 break;
+            case B:
+                moveBackward();
+                break;
         }
     }
 
@@ -38,6 +41,22 @@ public class MarsRover {
                 break;
             case W:
                 location.setXCoordinate(location.getXCoordinate() - 1);
+                break;
+        }
+    }
+    private void moveBackward() {
+        switch (location.getDirection()) {
+            case N:
+                location.setYCoordinate(location.getYCoordinate() - 1);
+                break;
+            case E:
+                location.setXCoordinate(location.getXCoordinate() - 1);
+                break;
+            case S:
+                location.setYCoordinate(location.getYCoordinate() + 1);
+                break;
+            case W:
+                location.setXCoordinate(location.getXCoordinate() + 1);
                 break;
         }
     }
