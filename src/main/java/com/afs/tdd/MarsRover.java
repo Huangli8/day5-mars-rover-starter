@@ -11,10 +11,6 @@ public class MarsRover {
         return location;
     }
 
-    public void setLocation(Location location) {
-        this.location = location;
-    }
-
     public void executeCommand(Command command) {
         switch(command){
             case M:
