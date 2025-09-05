@@ -35,7 +35,7 @@ public class Location {
         this.direction = direction;
     }
 
-    public String generateLocationInfo() {
+    public String generateLocationReport() {
         return String.format("location coordinates: x: %d, y: %d, direction: %s", xCoordinate, yCoordinate, direction.name());
     }
 }

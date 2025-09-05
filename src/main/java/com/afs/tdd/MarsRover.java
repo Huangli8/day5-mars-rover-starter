@@ -15,7 +15,7 @@ public class MarsRover {
         for(Command command:commands){
             executeCommand(command);
         }
-        return location.generateLocationInfo();
+        return location.generateLocationReport();
     }
 
     public void executeCommand(Command command) {
