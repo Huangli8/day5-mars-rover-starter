@@ -16,9 +16,13 @@ public class MarsRover {
     }
 
     public void executeCommand(Command command) {
-
-        if (command == Command.M) {
-            moveForward();
+        switch(command){
+            case M:
+                moveForward();
+                break;
+            case L:
+                turnLeft();
+                break;
         }
 
     }
@@ -36,6 +40,22 @@ public class MarsRover {
                 break;
             case W:
                 location.setXCoordinate(location.getXCoordinate() - 1);
+                break;
+        }
+    }
+    private void turnLeft() {
+        switch(location.getDirection()) {
+            case N:
+                location.setDirection(Direction.W);
+                break;
+            case E:
+                location.setDirection(Direction.N);
+                break;
+            case S:
+                location.setDirection(Direction.E);
+                break;
+            case W:
+                location.setDirection(Direction.S);
                 break;
         }
     }
