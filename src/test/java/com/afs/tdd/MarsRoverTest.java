@@ -225,9 +225,8 @@ class MarsRoverTest {
         Command[] commands = {M,L,L,M,R,B};
         //when
         String expectedReport = marsRover.executeBatchOfCommands(commands);
-        Location currentLocation = new Location(1,0,Direction.W);
         //then
-        assertEquals(currentLocation.generateLocationReport(),expectedReport);
+        assertEquals("location coordinates: x: 1, y: 0, direction: W",expectedReport);
     }
 
 
